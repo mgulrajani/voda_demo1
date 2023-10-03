@@ -10,6 +10,47 @@ public class Account {
 	private long accountId;
 	private double balance;
 	
+	//overloaded constructors 
+	/**
+	 * 
+	 * overloading 
+	 *  overloaded functions
+	 *  overloaded constructors
+	 *  methods having same name with diff arguments
+	 *  diff datatypes, diff sequence ,diff number of arguemtns
+	 *  
+	 *   eg :add(int,int,int)
+	 *   add(int,int)
+	 *   add(intarr)
+	 *   
+	 *
+	 * */
+	
+	//what is constructor overloaded
+	
+	public Account() {
+		System.out.println("Account object initialised");
+	}
+	
+	public Account(Account a) {
+		
+		this.accountId=a.getAccountId();
+		this.balance=a.getBalance();
+		
+		
+	}
+	public Account(long id,double bal) {
+		
+		this.accountId =id;
+		this.balance=bal;
+		
+	}
+	public Account(long id) {
+		
+		this.accountId=id;
+		this.balance =1000;
+		
+	}
    
 	/**
 	 * integral datatypes - byte short int long 
@@ -87,6 +128,16 @@ public class Account {
 		}
 		return this.balance;
 	}
+  
+	//we are overriding the default toString( ) provided by java.lang.Object which print the string form of the object as a fully qualified classname and hashcode
+	
+	//this method will be automatically called once you use system.out.println(accountobject)
+	@Override
+	public String toString() {
+		return "Account [accountId=" + accountId + ", balance=" + balance + "]";
+	}
+	
+	
 	
 }
 
