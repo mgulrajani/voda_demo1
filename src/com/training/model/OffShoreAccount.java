@@ -30,6 +30,14 @@ public class OffShoreAccount extends Account {
 	public String toString() {
 		return "OffShoreAccount [=" +super.toString()+" "+ nation + ", taxCode=" + taxCode + "]";
 	}
+	@Override
+	public void addInterest(double amt) {
+		// TODO Auto-generated method stub
+		double bal = this.getBalance()+amt;
+		this.setBalance(bal);
+		System.out.println("amt is added as an interest ,offshore account");
+		
+	}
 	
 	
 

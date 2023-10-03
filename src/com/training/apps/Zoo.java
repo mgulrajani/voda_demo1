@@ -9,6 +9,7 @@ import com.training.model.Mammal;
 
 public class Zoo {
 public static void main(String[] args) {
+	
 	Mammal mammal = null;
 	System.out.println("1.Elephant");
 	System.out.println("2.Deer");

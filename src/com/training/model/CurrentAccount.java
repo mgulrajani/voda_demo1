@@ -34,5 +34,11 @@ public class CurrentAccount extends Account {
 	 return balance;
 	 
    }
+   @Override
+   public void addInterest(double amt) {
+		
+		System.out.println("this is from CurrentAccount class ,addInterest method");
+	}
+	
 
 }

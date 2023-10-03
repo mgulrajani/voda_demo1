@@ -11,7 +11,25 @@ public class Banking {
 		//reference of parent class and object of child class - upcasting 
 		//itis allowed
 		//liskov's substitution principle
+		//life cycle stages -instantiated  , service , no longer required
+		Account acc2=  new Account(343434,55656);
+		acc2.deposit(10000);
+		acc2.withdrawl(9000);
 		
+		Account acc3=acc2;
+		if(acc2==acc3) {
+			System.out.println("both are pointing to same object");
+		}
+		acc2=null;
+		System.out.println(acc3);
+		if(acc2==acc3) {
+			System.out.println("both are pointing to same object");
+		}else
+		{
+			System.out.println("They are pointing to different object in heap");
+		}
+		acc3=null;
+		System.gc();
 		Account dinu=new CurrentAccount(3224324, 1000000, 2000000);
 		dinu.withdrawl(3000000);
 		
@@ -45,6 +63,8 @@ public class Banking {
 		displayDetails(drishti);
 		displayDetails(dinu);
 		System.out.println(ramani);
+		
+		
 		
 	}
 	

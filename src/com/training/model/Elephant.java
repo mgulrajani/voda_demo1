@@ -1,9 +1,11 @@
 package com.training.model;
+//if you want to prevent further inheritance ,use final keyword
+public  class Elephant extends Mammal {
 
-public class Elephant extends Mammal {
-
+	
+	//if final is used with method ,then we cannot override the method in the child class
 	@Override
-	public void eat() {
+	public final void eat() {
 		// TODO Auto-generated method stub
 		System.out.println("Elephant loves to eat grass ");
 	}

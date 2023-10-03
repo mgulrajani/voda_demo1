@@ -1,14 +1,19 @@
 package com.training.model;
 
 public class Account {
+	
+	private static final double interestRate = 0.08;
 	//instance variables 
 	//why are they instance variables 
 	//what is an instance ? object is an instance
 	//if i create 2 Account objects -- then both the 
 	//Account objects will have their own accountId and balance
 	//Dristi and Ramani 
-	private long accountId;
-	private double balance;
+	//private long accountId;
+	//private double balance;
+	
+	private Long accountId;
+	private Double balance;
 	
 	//overloaded constructors 
 	/**
@@ -29,6 +34,8 @@ public class Account {
 	//what is constructor overloaded
 	
 	public Account() {
+		
+		
 		System.out.println("Account object initialised");
 	}
 	
@@ -48,7 +55,7 @@ public class Account {
 	public Account(long id) {
 		
 		this.accountId=id;
-		this.balance =1000;
+		this.balance =1000d;
 		
 	}
    
@@ -136,8 +143,18 @@ public class Account {
 	public String toString() {
 		return "Account [accountId=" + accountId + ", balance=" + balance + "]";
 	}
+
+	@Override
+	protected void finalize() throws Throwable {
+		// TODO Auto-generated method stub
+		super.finalize();
+		System.out.println("object is going to be cleared off from the mem");
+	}
 	
-	
+	public void addInterest(double amt) {
+		this.balance+=amt;
+		System.out.println("this is from Account class ,addInterest method");
+	}
 	
 }
 
