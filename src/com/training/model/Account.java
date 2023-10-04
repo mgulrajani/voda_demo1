@@ -1,6 +1,10 @@
 package com.training.model;
 
-public class Account {
+import java.io.Serializable;
+
+import com.training.exceptions.LessFundsException;
+
+public class Account implements Serializable{
 	
 	private static final double interestRate = 0.08;
 	//instance variables 
@@ -122,12 +126,13 @@ public class Account {
 		return this.balance;
 	}
 	
-	public double withdrawl(double amtToBeWithdrawn) {
+	public double withdrawl(double amtToBeWithdrawn) 
+			throws LessFundsException {
 		
 		if(this.balance < amtToBeWithdrawn) {
 			//you will throw exception
-			System.out.println("withdrawl not possible  ,not enough funds");
-		}
+			throw new LessFundsException("Not enough funds",1001);
+				}
 		else {
 			this.balance-=amtToBeWithdrawn;
 			
@@ -155,6 +160,4 @@ public class Account {
 		this.balance+=amt;
 		System.out.println("this is from Account class ,addInterest method");
 	}
-	
 }
-

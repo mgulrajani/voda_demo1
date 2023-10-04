@@ -1,11 +1,13 @@
 package com.training.apps;
 
+import com.training.exceptions.LessFundsException;
 import com.training.model.Account;
 import com.training.model.CurrentAccount;
 import com.training.model.OffShoreAccount;
 
 public class Banking {
 	public static void main(String[] args) {
+		try {
 		//Liskov's substitution principle
 		//Parent class reference can point to child class object 
 		//reference of parent class and object of child class - upcasting 
@@ -14,7 +16,7 @@ public class Banking {
 		//life cycle stages -instantiated  , service , no longer required
 		Account acc2=  new Account(343434,55656);
 		acc2.deposit(10000);
-		acc2.withdrawl(9000);
+		acc2.withdrawl(100000);
 		
 		Account acc3=acc2;
 		if(acc2==acc3) {
@@ -64,7 +66,13 @@ public class Banking {
 		displayDetails(dinu);
 		System.out.println(ramani);
 		
-		
+		}
+		catch(LessFundsException lfe) {
+			System.out.println(lfe.getMessage() + " "+lfe.getErrorCode());
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 	

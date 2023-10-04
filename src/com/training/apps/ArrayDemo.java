@@ -1,5 +1,6 @@
 package com.training.apps;
 
+import com.training.exceptions.LessFundsException;
 import com.training.model.Account;
 import com.training.model.CurrentAccount;
 import com.training.model.Deer;
@@ -9,7 +10,7 @@ import com.training.model.Mammal;
 import com.training.model.OffShoreAccount;
 
 public class ArrayDemo {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws LessFundsException {
 		//declared x as an int array with 10 values
 		int []xArr= { 12,23,35,40,57,66,87,98,119,330};
 		
