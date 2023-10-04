@@ -1,9 +1,26 @@
 package com.training.apps;
 
 import com.training.services.ModernCalculator;
+import com.training.services.Openable;
 
 public class CalcApp {
 	public static void main(String[] args) {
+		//can i instantiate an interface with new operator
+		//annonymous implementation
+		//becuase I have not created any class which is implementing
+		
+		Openable o =new Openable() {
+
+			@Override
+			public void open() {
+				System.out.println("open method implemented anonymously");
+				
+			}};
+			//lambda , instead of using anonymous class
+			
+			 Openable o1=()->System.out.println("hello there , this is opened ");
+			o1.open();
+			
 		//baseclass ref and we created the object of child class
 		//Shop is Openable
 		//Why Shop is Openable , because it implements Openable interface
