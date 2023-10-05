@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import com.training.model.Book;
 import com.training.model.BookTitleComparator;
@@ -21,6 +22,14 @@ public static void main(String[] args) {
 	
 	Book b5=new Book(2233,"BG");
 	List<Book> list=List.of(b1,b2,b3,b4,b5);
+	System.out.println("*************");
+	List<Book> booksWithIdGT2000=
+			list
+			.stream()
+			.filter(b->b.getId()>5000)
+			.collect(Collectors.toList());
+	System.out.println(booksWithIdGT2000);
+	System.out.println("***********");
 	Set<Book> set=new TreeSet<>(list);
 	
 	for(Book b:set) {
