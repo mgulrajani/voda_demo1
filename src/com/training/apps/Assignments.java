@@ -17,6 +17,12 @@ package com.training.apps;
  * 
  * 2)create user model username and password , repo login (retrieval)  and register  ,you are adding a user , methods ,service  --will consume repo (has a relationship) login and register
  * create app - will consume service (has a relationship)
+ * 
+ * a.repo on User - jdbc crud 
+ * repo on Product  -jdbc
+ * 
+ * b. spring framework -- spring context  , create a car class autowire engine object  , @Bean of engine in AppConfiguration
+ * 
  */
 public class Assignments {
 
