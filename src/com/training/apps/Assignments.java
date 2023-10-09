@@ -23,6 +23,13 @@ package com.training.apps;
  * 
  * b. spring framework -- spring context  , create a car class autowire engine object  , @Bean of engine in AppConfiguration
  * 
+ * JUNIT
+ * 
+ * a. write test cases for testing increment and decrement method of the Counter class
+ * 
+ * 
+ * b. write the test case for testing getFullName  of Person class , and also test constructor should throw IllegalArgumentException if incase fname or lastname is null
+ * 
  */
 public class Assignments {
 
